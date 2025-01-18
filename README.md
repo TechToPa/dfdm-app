@@ -1,6 +1,6 @@
 # Charakterbogen-App für "Das Feuer des Mondes"
 
-<img src="https://www.dasfeuerdesmondes.de/assets/images/book_cover.jpg" alt="Das Feuer des Mondes" width="300"/>
+<img src="https://dasfeuerdesmondes.de/wp-content/uploads/2017/11/Cover-2.-Auflage-201x300.jpg" alt="Das Feuer des Mondes" width="300"/>
 
 Willkommen zur offiziellen Charakterbogen-App für das Spielbuch **"Das Feuer des Mondes"** von Christian und Florian Sussner. Diese App wurde speziell entwickelt, um das Erlebnis mit dem Spielbuch zu unterstützen und zu erweitern. Sie bietet umfangreiche Funktionen, um die Verwaltung deines Charakters, deiner Ausrüstung und deines Fortschritts zu erleichtern.
 
