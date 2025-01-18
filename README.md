@@ -10,7 +10,7 @@ Homepage des Spiels: **[www.dasfeuerdesmondes.de](http://www.dasfeuerdesmondes.d
 
 # App über folgenden Link starten
 
-**[START!](https://html-preview.github.io/?url=https://github.com/TechToPa/dfdm-app/blob/master/build/index.html)**
+**[START!](https://rawcdn.githack.com/TechToPa/dfdm-app/master/build/index.html)**
 
 ## Funktionen der App
 
