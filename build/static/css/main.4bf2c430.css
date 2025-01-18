@@ -142,7 +142,7 @@ textarea {
     line-height: 1;
     resize: none;
 }
-input {
+input:not([type='checkbox']) {
     height: 38px;
 }
 input.square {
@@ -168,6 +168,9 @@ input.square {
 }
 .tbl tr td {
     vertical-align: bottom;
+}
+.tbl tr td:has(.square) {
+    width: 38px;
 }
 .health-bar-container {
     margin: 10px 0;
@@ -214,3 +217,4 @@ input.square {
     margin-top: 10px;
     width: 100%;
 }
+/*# sourceMappingURL=main.4bf2c430.css.map*/

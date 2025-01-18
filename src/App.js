@@ -4,8 +4,9 @@ import React, {useState, useEffect} from 'react';
 const CharacterSheet = () => {
     const [name, setName] = useState('');
     const [backpack, setBackpack] = useState([]);
+    // prettier-ignore
     const [specialItems, setSpecialItems] = useState({
-        Portalring: false,
+        'Portalring': false,
         'Silberner Kompass': false,
         'Kristallfläschchen leer': false,
         'Kristallfläschchen gefüllt': false,
@@ -253,10 +254,31 @@ const CharacterSheet = () => {
             prevBackpack.filter((i) => i.name !== item.name),
         );
     };
-    const handleEquipmentChange = (type, name, damage, armor) => {
+    const addItemToSmallItems = (itemName, itemEffect) => {
+        const newItem = {name: itemName, effect: itemEffect};
+        setSmallItems((prevItems) => [...prevItems, newItem]);
+    };
+    const removeItemFromSmallItems = (item) => {
+        setSmallItems((prevItems) =>
+            prevItems.filter((i) => i.name !== item.name),
+        );
+    };
+    const addItemToHealingFood = (itemName, itemEffect) => {
+        const newItem = {name: itemName, effect: itemEffect};
+        setHealingFood((prevItems) => [...prevItems, newItem]);
+    };
+    const removeItemFromHealingFood = (item) => {
+        setHealingFood((prevItems) =>
+            prevItems.filter((i) => i.name !== item.name),
+        );
+    };
+    const handleEquipmentChange = (type, title, name, damage, armor) => {
         setActiveEquipment((prevEquipment) => ({
             ...prevEquipment,
-            items: {...prevEquipment.items, [type]: {name, damage, armor}},
+            items: {
+                ...prevEquipment.items,
+                [type]: {title, name, damage, armor},
+            },
         }));
     };
     const handleAdditionalSlotChange = (index, name, damage, armor) => {
@@ -265,6 +287,12 @@ const CharacterSheet = () => {
         setActiveEquipment((prevEquipment) => ({
             ...prevEquipment,
             additionalSlots: newSlots,
+        }));
+    };
+    const handleSpecialItemChange = (name, value) => {
+        setSpecialItems((prevItems) => ({
+            ...prevItems,
+            [name]: value,
         }));
     };
     const handleSkillEffectChange = (value) => {
@@ -421,7 +449,152 @@ const CharacterSheet = () => {
                         </tr>
                     </tbody>
                 </table>
+                <h3>Spezial Items</h3>
+                <table className='tbl baseline'>
+                    <tbody>
+                        {Object.entries(specialItems).map(([name, active]) => (
+                            <tr key={name}>
+                                <td>{name}</td>
+                                <td>
+                                    <input
+                                        type='checkbox'
+                                        checked={active}
+                                        onChange={(e) =>
+                                            handleSpecialItemChange(
+                                                name,
+                                                e.target.checked,
+                                            )
+                                        }
+                                    />
+                                </td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+                <h3>Kleingegenstände</h3>
+                <table className='tbl baseline'>
+                    <tbody>
+                        {smallItems.map((item, index) => (
+                            <tr key={index}>
+                                <td>
+                                    {item.name} ({item.effect}){' '}
+                                </td>
+                                <td style={{width: '40px'}}>
+                                    <button
+                                        className='square'
+                                        onClick={() =>
+                                            removeItemFromSmallItems(item)
+                                        }
+                                    >
+                                        ×
+                                    </button>
+                                </td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+                <table className='tbl'>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <input
+                                    type='text'
+                                    placeholder='Gegenstand hinzufügen'
+                                    id='smallItemName'
+                                />
+                            </td>
+                            <td>
+                                <button
+                                    className='square'
+                                    onClick={() => {
+                                        const smallItemName =
+                                            document.getElementById(
+                                                'smallItemName',
+                                            ).value;
+
+                                        addItemToSmallItems(smallItemName);
+                                        document.getElementById(
+                                            'smallItemName',
+                                        ).value = '';
+                                    }}
+                                >
+                                    +
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h3>Heilgegenstände</h3>
+                <table className='tbl baseline'>
+                    <tbody>
+                        {healingFood.map((item, index) => (
+                            <tr key={index}>
+                                <td>
+                                    {item.name} ({item.effect}){' '}
+                                </td>
+                                <td style={{width: '40px'}}>
+                                    <button
+                                        className='square'
+                                        onClick={() =>
+                                            removeItemFromHealingFood(item)
+                                        }
+                                    >
+                                        ×
+                                    </button>
+                                </td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+                <table className='tbl'>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <input
+                                    type='text'
+                                    placeholder='Gegenstand hinzufügen'
+                                    id='healtingFoodName'
+                                />
+                            </td>
+                            <td>
+                                <input
+                                    type='text'
+                                    placeholder='Effekt/Wert hinzufügen'
+                                    id='healtingFoodEffect'
+                                />
+                            </td>
+                            <td>
+                                <button
+                                    className='square'
+                                    onClick={() => {
+                                        const itemName =
+                                            document.getElementById(
+                                                'healtingFoodName',
+                                            ).value;
+                                        const itemEffect =
+                                            document.getElementById(
+                                                'healtingFoodEffect',
+                                            ).value;
+                                        addItemToHealingFood(
+                                            itemName,
+                                            itemEffect,
+                                        );
+                                        document.getElementById(
+                                            'healtingFoodName',
+                                        ).value = '';
+                                        document.getElementById(
+                                            'healtingFoodEffect',
+                                        ).value = '';
+                                    }}
+                                >
+                                    +
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
+
             <div>
                 <h2>Aktive Ausrüstung</h2>
                 <table className='tbl'>
@@ -454,6 +627,8 @@ const CharacterSheet = () => {
                                             onChange={(e) =>
                                                 handleEquipmentChange(
                                                     slot,
+                                                    activeEquipment.items[slot]
+                                                        .title,
                                                     e.target.value,
                                                     activeEquipment.items[slot]
                                                         .damage,
@@ -467,7 +642,7 @@ const CharacterSheet = () => {
                                         <input
                                             className='square'
                                             type='number'
-                                            placeholder='Schaden'
+                                            placeholder='0'
                                             value={
                                                 activeEquipment.items[slot]
                                                     .damage
@@ -475,6 +650,8 @@ const CharacterSheet = () => {
                                             onChange={(e) =>
                                                 handleEquipmentChange(
                                                     slot,
+                                                    activeEquipment.items[slot]
+                                                        .title,
                                                     activeEquipment.items[slot]
                                                         .name,
                                                     Number(e.target.value),
@@ -488,7 +665,7 @@ const CharacterSheet = () => {
                                         <input
                                             className='square'
                                             type='number'
-                                            placeholder='Rüstung'
+                                            placeholder='0'
                                             value={
                                                 activeEquipment.items[slot]
                                                     .armor
@@ -496,6 +673,8 @@ const CharacterSheet = () => {
                                             onChange={(e) =>
                                                 handleEquipmentChange(
                                                     slot,
+                                                    activeEquipment.items[slot]
+                                                        .title,
                                                     activeEquipment.items[slot]
                                                         .name,
                                                     activeEquipment.items[slot]
@@ -534,7 +713,7 @@ const CharacterSheet = () => {
                                     <input
                                         className='square'
                                         type='number'
-                                        placeholder='Schaden'
+                                        placeholder='0'
                                         value={slot.damage}
                                         onChange={(e) =>
                                             handleAdditionalSlotChange(
@@ -550,7 +729,7 @@ const CharacterSheet = () => {
                                     <input
                                         className='square'
                                         type='number'
-                                        placeholder='Rüstung'
+                                        placeholder='0'
                                         value={slot.armor}
                                         onChange={(e) =>
                                             handleAdditionalSlotChange(
@@ -569,7 +748,7 @@ const CharacterSheet = () => {
                 <table className='tbl baseline'>
                     <tbody>
                         <tr>
-                            <td style={{width: '71%'}}>
+                            <td>
                                 <h3>Effekte aus Fertigkeiten</h3>
                             </td>
 
@@ -623,6 +802,7 @@ const CharacterSheet = () => {
                                 <input
                                     style={{textAlign: 'center'}}
                                     value={gold}
+                                    type='number'
                                     onChange={(e) =>
                                         setGold(Number(e.target.value))
                                     }
@@ -719,6 +899,7 @@ const CharacterSheet = () => {
                                 <input
                                     style={{textAlign: 'center'}}
                                     value={agility}
+                                    type='number'
                                     onChange={(e) =>
                                         setAgility(Number(e.target.value))
                                     }

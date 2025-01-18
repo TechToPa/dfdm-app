@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.be7ce832.css",
-    "main.js": "/static/js/main.958eb1a2.js",
+    "main.css": "/static/css/main.4bf2c430.css",
+    "main.js": "/static/js/main.fd5bbd2f.js",
     "static/media/jacquard-24-v2-latin-regular.woff2": "/static/media/jacquard-24-v2-latin-regular.50f0a0dfb44927c48e32.woff2",
     "static/media/texture-seamless-wood-3.jpg": "/static/media/texture-seamless-wood-3.ec5b7cdfb7bb774147ca.jpg",
     "static/media/jaldi-v12-latin-700.woff2": "/static/media/jaldi-v12-latin-700.97e89e6d169564194ec4.woff2",
     "static/media/jaldi-v12-latin-regular.woff2": "/static/media/jaldi-v12-latin-regular.70fec9be28a1f64b72cd.woff2",
     "index.html": "/index.html",
-    "main.be7ce832.css.map": "/static/css/main.be7ce832.css.map",
-    "main.958eb1a2.js.map": "/static/js/main.958eb1a2.js.map"
+    "main.4bf2c430.css.map": "/static/css/main.4bf2c430.css.map",
+    "main.fd5bbd2f.js.map": "/static/js/main.fd5bbd2f.js.map"
   },
   "entrypoints": [
-    "static/css/main.be7ce832.css",
-    "static/js/main.958eb1a2.js"
+    "static/css/main.4bf2c430.css",
+    "static/js/main.fd5bbd2f.js"
   ]
 }
