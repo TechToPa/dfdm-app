@@ -8,6 +8,10 @@ Homepage des Spiels: **[www.dasfeuerdesmondes.de](http://www.dasfeuerdesmondes.d
 
 ---
 
+# App über folgenden Link starten
+
+**[START!](https://html-preview.github.io/?url=https://github.com/TechToPa/dfdm-app/blob/master/build/index.html)**
+
 ## Funktionen der App
 
 ### 1. **Charakterbogen**
@@ -48,7 +52,7 @@ Homepage des Spiels: **[www.dasfeuerdesmondes.de](http://www.dasfeuerdesmondes.d
 
 ## Benutzeranleitung
 
-### **Einfach über den Link oben öffnen und loslegen oder...
+### **Einfach über den Link oben öffnen und loslegen oder...**
 
 ### **Installation**
 1. Lade das Repository herunter oder klone es:
