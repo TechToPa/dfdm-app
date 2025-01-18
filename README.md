@@ -1,70 +1,132 @@
-# Getting Started with Create React App
+# Charakterbogen-App für "Das Feuer des Mondes"
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<img src="https://dasfeuerdesmondes.de/wp-content/uploads/2017/11/Cover-2.-Auflage-201x300.jpg" alt="Das Feuer des Mondes" width="300"/>
 
-## Available Scripts
+Willkommen zur offiziellen Charakterbogen-App für das Spielbuch **"Das Feuer des Mondes"** von Christian und Florian Sussner. Diese App wurde speziell entwickelt, um das Erlebnis mit dem Spielbuch zu unterstützen und zu erweitern. Sie bietet umfangreiche Funktionen, um die Verwaltung deines Charakters, deiner Ausrüstung und deines Fortschritts zu erleichtern.
 
-In the project directory, you can run:
+Homepage des Spiels: **[www.dasfeuerdesmondes.de](http://www.dasfeuerdesmondes.de)**
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# App über folgenden Link starten
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+**[START!](https://rawcdn.githack.com/TechToPa/dfdm-app/master/build/index.html)**
 
-### `npm test`
+## Funktionen der App
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 1. **Charakterbogen**
+- Eingabe des Charakternamens.
+- Verwaltung von Lebensenergie, Agilität und Menschlichkeit.
+- Automatische Speicherung deines Fortschritts im lokalen Speicher (Local Storage).
+- Anpassung der maximalen Lebensenergie und der aktuellen Lebenspunkte.
 
-### `npm run build`
+### 2. **Rucksack**
+- Hinzufügen und Entfernen von Gegenständen.
+- Verwaltung von Gegenständen mit Effekten/Werten.
+- Limitierung auf maximal 6 Gegenstände im Rucksack.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 3. **Ausrüstung**
+- Verwaltung der aktiven Ausrüstung (Waffe, Schild, Körper, Kopf, Hände, Ringe, Amulett, und zusätzliche Slots).
+- Anpassung von Schaden und Rüstung für jeden Ausrüstungsgegenstand.
+- Anzeige der Gesamtwerte für Schaden und Rüstung.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 4. **Gold-Management**
+- Hinzufügen und Entfernen von Gold in flexiblen Schritten.
+- Direkte Anpassung des Goldwertes durch Eingabe.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 5. **Kampfsystem**
+- Eingabe der Kampfkraft, des Schadens, der Rüstung und der Lebensenergie des Gegners.
+- Automatischer Ablauf von Kämpfen mit Würfelwürfen und Berechnung von Schaden.
+- Anzeige eines detaillierten Kampfprotokolls.
 
-### `npm run eject`
+### 6. **Würfelsystem**
+- Würfelfunktion mit zwei sechsseitigen Würfeln.
+- Animierte Würfelwürfe mit realistischen Ergebnissen.
+- Würfelergebnisse werden in Form von Würfelsymbolen (⚀, ⚁, ⚂, ⚃, ⚄, ⚅) angezeigt.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 7. **Zusätzliche Funktionen**
+- Reset-Button, um den Charakterbogen vollständig zurückzusetzen.
+- Fortschrittsspeicherung in Local Storage zur automatischen Wiederherstellung der Daten.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Benutzeranleitung
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### **Einfach über den Link oben öffnen und loslegen oder...**
 
-## Learn More
+### **Installation**
+1. Lade das Repository herunter oder klone es:
+   ```bash
+   git clone https://github.com/dein-benutzername/charakterbogen-feuer-des-mondes.git
+   ```
+2. Navigiere in das Verzeichnis:
+   ```bash
+   cd charakterbogen-feuer-des-mondes
+   ```
+3. Installiere die Abhängigkeiten:
+   ```bash
+   npm install
+   ```
+4. Starte die App:
+   ```bash
+   npm start
+   ```
+5. Öffne deinen Browser und gehe zu `http://localhost:3000`, um die App zu nutzen.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### **Verwendung**
 
-### Code Splitting
+#### **Charakterbogen**
+1. Gib den Namen deines Charakters in das Namensfeld ein.
+2. Passe die Lebensenergie (maximal und aktuell), Agilität und Menschlichkeit nach Bedarf an.
+3. Deine Eingaben werden automatisch gespeichert und beim nächsten Öffnen der App wiederhergestellt.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+#### **Rucksack**
+1. Füge neue Gegenstände hinzu, indem du den Namen und den Effekt des Gegenstands eingibst und auf das `+`-Symbol klickst.
+2. Entferne Gegenstände aus dem Rucksack, indem du auf das `×`-Symbol neben dem Gegenstand klickst.
+3. Hinweis: Der Rucksack kann maximal 6 Gegenstände enthalten.
 
-### Analyzing the Bundle Size
+#### **Ausrüstung**
+1. Wähle die Ausrüstungsteile aus (z. B. Waffe, Schild, Ringe) und gib deren Namen, Schaden und Rüstung ein.
+2. Passe die zusätzlichen Slots an, um weitere Gegenstände mit Schaden und Rüstung hinzuzufügen.
+3. Die Gesamtsummen für Schaden und Rüstung werden automatisch berechnet und angezeigt.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+#### **Gold**
+1. Passe den Goldbetrag durch direkte Eingabe oder über die Buttons an (`+/- 1`, `+/- 5`, `+/- 10`, `+/- 20`, `+50`).
 
-### Making a Progressive Web App
+#### **Lebensenergie**
+1. Reduziere oder erhöhe die Lebensenergie durch Buttons (`+/- 1`, `+/- 5`, `+/- 10`).
+2. Setze die Lebensenergie auf das Maximum, indem du auf `voll` klickst.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+#### **Kampf**
+1. Gib die Werte des Gegners ein (Kampfkraft, Schaden, Rüstung, Lebensenergie).
+2. Klicke auf `Kampf!`, um eine Runde zu starten.
+3. Lies die Ergebnisse im Kampfprotokoll nach.
+4. Beende den Kampf oder starte weitere Runden.
 
-### Advanced Configuration
+#### **Würfeln**
+1. Klicke auf `Würfeln!`, um zwei sechsseitige Würfel zu werfen.
+2. Die Würfelergebnisse werden animiert angezeigt und anschließend als Symbole dargestellt (⚀, ⚁, ⚂, ⚃, ⚄, ⚅).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+#### **Reset**
+1. Klicke auf `Reset`, um alle Daten zurückzusetzen und den Charakterbogen neu zu starten.
 
-### Deployment
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Anforderungen zum lebst hosten
+- Node.js und npm müssen installiert sein.
+- Ein moderner Browser wie Chrome, Firefox oder Edge wird empfohlen.
 
-### `npm run build` fails to minify
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Homepage des Spiels
+Weitere Informationen zu **"Das Feuer des Mondes"** findest du auf der offiziellen Homepage:  
+**[www.dasfeuerdesmondes.de](http://www.dasfeuerdesmondes.de)**
+
+---
+
+## Lizenz
+Dieses Projekt wurde für das Spielbuch **"Das Feuer des Mondes"** erstellt. Alle Rechte am Buch und den Inhalten liegen bei den Autoren **Christian und Florian Sussner**. Die App ist ein Fan-Projekt und dient der Unterstützung beim Spielen des Buches unterwegs.
+
+Viel Spaß beim Spielen von **"Das Feuer des Mondes"** und mit der App! 🐉🌕
