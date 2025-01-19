@@ -98,10 +98,13 @@ const CharacterSheet = () => {
             return;
         }
 
-        setEnemyHealth(initialEnemyHealth); // Setze die aktuelle Lebensenergie des Gegners
+        if (battleRounds === 0) {
+            setEnemyHealth(initialEnemyHealth); // Setze die aktuelle Lebensenergie des Gegners
+        }
 
         let playerHealth = healthCurrent; // Lebensenergie des Spielers
         let currentEnemyHealth = initialEnemyHealth; // Aktuelle Lebensenergie des Gegners
+
         if (isBattleStarted) {
             currentEnemyHealth = enemyHealth;
         }
