@@ -96,7 +96,7 @@ input[type='number'] {
     box-sizing: border-box;
 }
 #CharacterSheet {
-    max-width: 320px;
+    max-width: 340px;
 }
 #CharacterSheet > div {
     background-color: #673e0d;
