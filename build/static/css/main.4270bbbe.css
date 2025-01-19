@@ -14,7 +14,7 @@ code {
     font-family: Jacquard\12;
     font-style: normal;
     font-weight: 400;
-    src: url(.../media/jacquard-24-v2-latin-regular.50f0a0dfb44927c48e32.woff2)
+    src: url(../media/jacquard-24-v2-latin-regular.50f0a0dfb44927c48e32.woff2)
         format('woff2');
 }
 @font-face {
@@ -22,7 +22,7 @@ code {
     font-family: Jaldi;
     font-style: normal;
     font-weight: 400;
-    src: url(.../media/jaldi-v12-latin-regular.70fec9be28a1f64b72cd.woff2)
+    src: url(../media/jaldi-v12-latin-regular.70fec9be28a1f64b72cd.woff2)
         format('woff2');
 }
 @font-face {
@@ -30,7 +30,7 @@ code {
     font-family: Jaldi;
     font-style: normal;
     font-weight: 700;
-    src: url(.../media/jaldi-v12-latin-700.97e89e6d169564194ec4.woff2)
+    src: url(../media/jaldi-v12-latin-700.97e89e6d169564194ec4.woff2)
         format('woff2');
 }
 :root {
@@ -100,7 +100,7 @@ input[type='number'] {
 }
 #CharacterSheet > div {
     background-color: #673e0d;
-    background-image: url(.../media/texture-seamless-wood-3.ec5b7cdfb7bb774147ca.jpg);
+    background-image: url(../media/texture-seamless-wood-3.ec5b7cdfb7bb774147ca.jpg);
     border: 5px ridge #fff;
     border-radius: 5px;
     border-radius: var(--border-radius);
