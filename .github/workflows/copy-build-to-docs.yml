@@ -16,10 +16,12 @@ jobs:
     - name: Check for changes in build folder
       id: check_changes
       run: |
-        git diff --exit-code --quiet build/ || echo "::set-output name=changes_detected::true"
+        if [ -n "$(git diff --exit-code --quiet build/)" ]; then
+          echo "changes_detected=true" >> $GITHUB_ENV
+        fi
 
     - name: Copy build to docs
-      if: steps.check_changes.outputs.changes_detected == 'true'
+      if: ${{ env.changes_detected == 'true' }}
       run: |
         cp -r build/* docs/
 
@@ -29,7 +31,7 @@ jobs:
         git config --global user.email 'github-actions@github.com'
 
     - name: Commit and push changes
-      if: steps.check_changes.outputs.changes_detected == 'true'
+      if: ${{ env.changes_detected == 'true' }}
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
