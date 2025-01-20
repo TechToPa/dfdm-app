@@ -16,7 +16,7 @@ jobs:
     - name: Check for changes in build folder
       id: check_changes
       run: |
-        git diff --quiet build/ || echo "changes_detected=true" >> $GITHUB_ENV
+        git diff --quiet build/ && echo "changes_detected=false" >> $GITHUB_ENV || echo "changes_detected=true" >> $GITHUB_ENV
 
     - name: Copy build to docs
       if: env.changes_detected == 'true'
