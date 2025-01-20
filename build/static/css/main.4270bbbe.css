@@ -102,11 +102,11 @@ input[type='number'] {
     background-color: #673e0d;
     background-image: url(../media/texture-seamless-wood-3.ec5b7cdfb7bb774147ca.jpg);
     border: 5px ridge #fff;
-    border-radius: 5px;
     border-radius: var(--border-radius);
     display: block;
     margin: 5px;
     padding: 5px;
+    box-shadow: inset 4px 4px 10px rgba(0, 0, 0, 0.5);
 }
 h1 {
     font-size: 34px;
