@@ -16,18 +16,23 @@ jobs:
     - name: Check for changes in build folder
       id: check_changes
       run: |
-        git diff --exit-code --quiet build/ || echo "Changes detected"
+        git diff --quiet build/ || echo "changes_detected=true" >> $GITHUB_ENV
 
     - name: Copy build to docs
-      if: steps.check_changes.outputs.changes_detected == 'Changes detected'
+      if: env.changes_detected == 'true'
       run: |
         cp -r build/* docs/
 
-    - name: Commit and push changes
-      if: steps.check_changes.outputs.changes_detected == 'Changes detected'
+    - name: Configure Git
       run: |
         git config --global user.name 'github-actions'
         git config --global user.email 'github-actions@github.com'
+
+    - name: Commit and push changes
+      if: env.changes_detected == 'true'
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
         git add docs/
         git commit -m 'Update docs with new build'
-        git push
+        git push origin main
